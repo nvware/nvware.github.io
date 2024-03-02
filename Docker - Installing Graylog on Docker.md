@@ -23,49 +23,50 @@ If you prefer to run the containers together, you could configure all the contai
 ```console
    sudo apt update && sudo apt upgrade
 ```
-
-3. **Install Dependencies:**
-
+2. **Install Dependencies:**
+```console
     sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
-5. **Add Docker GPG Key:**
-
+```
+3. **Add Docker GPG Key:**
+```console
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-7. **Add Docker Repository:**
-
+```
+4. **Add Docker Repository:**
+```console
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-9. **Install Docker:**
-
+```
+5. **Install Docker:**
+```console
     sudo apt update
     sudo apt install docker-ce
-
-11. **Start Docker Service:**
-
+```
+6. **Start Docker Service:**
+```console
     sudo systemctl start docker
     sudo systemctl enable docker
-
-13. **Pull Graylog Docker Image:**
-
+```
+7. **Pull Graylog Docker Image:**
+```console
      docker pull graylog/graylog:5.0
-
-14. **Run Graylog Container:**
-
+```
+8. **Run Graylog Container:**
+```console
     docker run --link mongo --link elasticsearch -p 9000:9000 -p 12201:12201 -p 1514:1514 -p 5555:5555 -e GRAYLOG_HTTP_EXTERNAL_URI="http://127.0.0.1:9000/" -d graylog/graylog:5.0
-
-16. **Configure Graylog Inputs:**
-
+```
+9. **Configure Graylog Inputs:**
     - Navigate to your Graylog port (e.g., localhost:9000/system/inputs).
     - Create a Raw/Plaintext TCP input.
     - Provide a name for the input and select the node (or choose “Global”).
     - Send a plain text message to the Graylog Raw/Plaintext TCP input running on port 5555:
+      ```console
         echo 'First log message' | nc localhost 5555
-
-17. **Access Graylog UI:**
+      ```
+10. **Access Graylog UI:**
 
     - Open your web browser and go to http://127.0.0.1:9000/.
     - Set the admin user password via environment variable:
-            -e GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      ```console
+         -e GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+      ```
 
 Remember to adjust the configuration if you plan to run Graylog on external servers. For security settings, consult the Graylog documentation
