@@ -21,7 +21,8 @@ If you prefer to run the containers together, you could configure all the contai
 **Installing Graylog on Docker in WSL (Ubuntu)**
 1. **Update Package Index:**
 ```console
-   sudo apt update && sudo apt upgrade ```
+   sudo apt update && sudo apt upgrade
+```
 
 3. **Install Dependencies:**
 
