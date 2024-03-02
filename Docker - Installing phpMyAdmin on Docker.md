@@ -1,0 +1,1 @@
+Installing phpMyAdmin on Docker
