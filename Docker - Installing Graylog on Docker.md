@@ -7,9 +7,13 @@ Docker is a set of platform-as-a-service products that use OS-level virtualizati
 **Requirements**
 You will need a recent version of Docker, at least v20.10.10. In addition, use the following Docker images in this chapter:
 
-Graylog: graylog/graylog
-MongoDB: mongo
-OpenSearch: https://hub.docker.com/r/opensearchproject/opensearch
-Elasticsearch: https://www.docker.elastic.co/r/elasticsearch
+- **Graylog**: graylog/graylog
+
+- **MongoDB**: mongo
+
+- **OpenSearch**: https://hub.docker.com/r/opensearchproject/opensearch
+
+- **Elasticsearch**: https://www.docker.elastic.co/r/elasticsearch
+
 
 If you prefer to run the containers together, you could configure all the containers above in a yaml file. To do this install Docker Compose. Refer to Settings for compose examples.
