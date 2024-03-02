@@ -1,1 +1,2 @@
-Installing phpMyAdmin on Docker
+- **Installing phpMyAdmin**  on Docker
+- To connect our apps to MySQL running on Docker Desktop on Windows or wsl
