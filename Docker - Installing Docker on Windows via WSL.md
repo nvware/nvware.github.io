@@ -1,8 +1,5 @@
 # Docker
 
-- **Installing mysql** on Docker
-- **Installing phpMyAdmin**  on Docker
-- To connect our apps to MySQL running on Docker Desktop on Windows
 - https://dataedo.com/docs/installing-docker-on-windows-via-wsl.
   
 # **Installing Docker on Windows via WSL**
